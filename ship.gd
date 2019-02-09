@@ -32,8 +32,8 @@ func shoot():
 	
 	get_parent().add_child(lazer, true)
 	lazer.position = pos
-	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation())
-	add_collision_exception_with(lazer)
+	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets totation of ship then shoots lazer at a specific velocity
+	add_collision_exception_with(lazer) # Makes sure lasers don't cllide with each other
 	pass
 
 func _process(delta):
