@@ -45,7 +45,7 @@ func _process(delta):
 	
 	var movedir = Vector2(1,0).rotated(rotation)
 	
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up"):
 		velocity = velocity.linear_interpolate(movedir, acc)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(0,0), dec)
