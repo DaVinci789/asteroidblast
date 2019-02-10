@@ -1,28 +1,19 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-export (int) var MAXSPEED = 450
 var velocity = Vector2(0,0)
 var screensize = get_viewport_rect().size
-var rot = 0
 export (int) var rot_speed = 190
-# how much the ship continues to slide after releasing the directional key
+
 var speed = 225
 var acc = 0.07
 var dec = 0.01
 var screenbuffer = 20
-var contacted = false
-signal hit
 
 var slazer = preload("res://lazer.tscn")
 export var lazer_speed = 100
 
 func _ready():
 	screensize = get_viewport_rect().size
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
 func shoot():
@@ -59,31 +50,3 @@ func _process(delta):
 		shoot()
 		if $lazer.is_colliding():
 			print($lazer.get_collider())
-
-	print($hitdelay.get_time_left())	
-		
-# if we add this back, add the Timer node back as a root of the hitbox (Raycast) node
-#		if $lazer.is_colliding():
-#			emit_signal("hit")
-#			var thing  =  $lazer.get_collider()
-#			contacted = true
-#			update()
-#			print(thing)
-#
-#		else:
-#			update()
-#
-#func _draw():
-#	if $lazer.is_colliding():
-#		draw_line($lazer.position, $lazer.get_cast_to(), Color(1.0, 0, 0))
-#		get_node("lazer/Timer").start()
-#		if contacted == false:
-#			draw_line($lazer.position, $lazer.get_cast_to(), Color(0.0, 0, 0))
-#	else:
-#		draw_line($lazer.position, $lazer.get_cast_to(), Color(0.0, 0, 0))
-#	pass
-#
-#
-#func _on_Timer_timeout():
-#	contacted = false
-#	update()
