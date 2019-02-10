@@ -21,7 +21,6 @@ export var lazer_speed = 100
 
 func _ready():
 	screensize = get_viewport_rect().size
-	$lazer.connect("hurt",self,"_draw")
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -29,7 +28,7 @@ func _ready():
 func shoot():
 	var lazer = slazer.instance()
 	var pos = position + Vector2(5,5)
-	
+
 	get_parent().add_child(lazer, true)
 	lazer.position = pos
 	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation())
@@ -54,11 +53,14 @@ func _process(delta):
 	position.x = wrapf(position.x, -screenbuffer, screensize.x + screenbuffer)
 	position.y = clamp(position.y, 0, screensize.y)
 	
-	if Input.is_action_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select") && $hitdelay.is_stopped():
 		print("firing")
+		$hitdelay.start()
 		shoot()
-		
-		
+		if $lazer.is_colliding():
+			print($lazer.get_collider())
+
+	print($hitdelay.get_time_left())	
 		
 # if we add this back, add the Timer node back as a root of the hitbox (Raycast) node
 #		if $lazer.is_colliding():

@@ -8,21 +8,19 @@
 [node name="ship" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 176.698, 826.767 )
-MAXSPEED = 450
-rot_speed = 190
 lazer_speed = 1000
 
 [node name="asteroid" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 171.8, 301.403 )
+position = Vector2( 151, 158 )
 
 [node name="asteroid2" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 512.386, 458.133 )
+position = Vector2( 226, 424 )
 
 [node name="asteroid3" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( 588.259, 175.327 )
-scale = Vector2( 1.66486, 3.8966 )
+position = Vector2( 605.88, 159.913 )
+scale = Vector2( 2.68373, 2.5598 )
 
 
