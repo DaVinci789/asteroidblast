@@ -22,7 +22,7 @@ func shoot():
 
 	get_parent().add_child(lazer, true)
 	lazer.position = pos
-	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets rotation of ship then shoots laser at a specific velocity
+	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets rotation of ship then shoots lazer at a specific velocity
 	add_collision_exception_with(lazer) # Makes sure lasers don't collide with each other
 	pass
 

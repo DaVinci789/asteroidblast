@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ship.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://ship.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,7 +20,9 @@ lazer_speed = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 2.1304, 0.507462 )
 rotation = 1.57014
+scale = Vector2( 0.126638, 0.126638 )
 texture = ExtResource( 2 )
 
 [node name="lazer" type="RayCast2D" parent="." index="1"]
