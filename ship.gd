@@ -22,8 +22,8 @@ func shoot():
 
 	get_parent().add_child(lazer, true)
 	lazer.position = pos
-	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets totation of ship then shoots lazer at a specific velocity
-	add_collision_exception_with(lazer) # Makes sure lasers don't cllide with each other
+	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets rotation of ship then shoots laser at a specific velocity
+	add_collision_exception_with(lazer) # Makes sure lasers don't collide with each other
 	pass
 
 func _process(delta):
@@ -35,7 +35,7 @@ func _process(delta):
 	
 	var movedir = Vector2(1,0).rotated(rotation)
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up"):
 		velocity = velocity.linear_interpolate(movedir, acc)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(0,0), dec)
