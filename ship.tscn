@@ -15,6 +15,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable" ]
 rot_speed = 190
 lazer_speed = 100
 
@@ -44,5 +45,6 @@ autostart = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 
