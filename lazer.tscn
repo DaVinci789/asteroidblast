@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://lazer.png" type="Texture" id=1]
+[ext_resource path="res://lazer.gd" type="Script" id=1]
+[ext_resource path="res://lazer.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 4.7466
 
-[node name="lazer" type="RigidBody2D"]
+[node name="lazer" type="RigidBody2D" index="0"]
 
 position = Vector2( -0.463928, 0.115982 )
 input_pickable = false
@@ -20,25 +21,28 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 2
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0.575659, -0.230619 )
-scale = Vector2( 0.0404853, 0.0404853 )
-texture = ExtResource( 1 )
+position = Vector2( 0.573097, -0.228063 )
+scale = Vector2( 0.0387126, 0.0387126 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0.566811, -0.283405 )
 shape = SubResource( 1 )
+
+[connection signal="body_exited" from="." to="." method="_on_lazer_body_exited"]
 
 

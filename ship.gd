@@ -11,6 +11,7 @@ var screenbuffer = 20
 
 var slazer = preload("res://lazer.tscn")
 export var lazer_speed = 100
+export var lazer_spin = 2000
 
 func _ready():
 	screensize = get_viewport_rect().size
@@ -23,6 +24,7 @@ func shoot():
 	get_parent().add_child(lazer, true)
 	lazer.position = pos
 	lazer.linear_velocity = Vector2(lazer_speed, 0).rotated(get_rotation()) # Gets rotation of ship then shoots lazer at a specific velocity
+	lazer.set_applied_torque(lazer_spin)
 	add_collision_exception_with(lazer) # Makes sure lasers don't collide with each other
 	pass
 
