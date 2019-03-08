@@ -50,5 +50,3 @@ func _process(delta):
 		print("firing")
 		$hitdelay.start()
 		shoot()
-		if $lazer.is_colliding():
-			print($lazer.get_collider())

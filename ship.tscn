@@ -27,23 +27,14 @@ rotation = 1.57014
 scale = Vector2( 0.126638, 0.126638 )
 texture = ExtResource( 2 )
 
-[node name="lazer" type="RayCast2D" parent="." index="1"]
-
-position = Vector2( 32, 0 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 9000, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="hitdelay" type="Timer" parent="." index="2"]
+[node name="hitdelay" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 0.6
 one_shot = true
 autostart = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
