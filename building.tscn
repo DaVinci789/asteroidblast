@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 36.3025, 36.7899 )
 
-[node name="building" type="StaticBody2D" index="0"]
+[node name="building" type="StaticBody2D"]
 
 position = Vector2( 47.8876, 4.18647e-006 )
 rotation = 3.14159
