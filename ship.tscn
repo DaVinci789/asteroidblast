@@ -18,6 +18,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable" ]
 rot_speed = 190
 lazer_speed = 100
+lazer_spin = 2000
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

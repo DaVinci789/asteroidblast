@@ -12,6 +12,7 @@
 
 position = Vector2( 176.698, 826.767 )
 lazer_speed = 1000
+lazer_spin = 2000
 
 [node name="asteroid" parent="." index="1" instance=ExtResource( 2 )]
 
