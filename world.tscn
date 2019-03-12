@@ -84,28 +84,35 @@ position = Vector2( 411.841, 947.549 )
 position = Vector2( 591.614, 950.164 )
 _sections_unfolded = [ "Collision", "Material", "Motion", "Pickable", "Visibility" ]
 
-[node name="building5" parent="." index="12" instance=ExtResource( 5 )]
-
-position = Vector2( 603.977, 44.5392 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="building6" parent="." index="13" instance=ExtResource( 5 )]
-
-position = Vector2( 124.667, 42.6885 )
-
-[node name="building7" parent="." index="14" instance=ExtResource( 5 )]
-
-position = Vector2( 281.97, 38.9873 )
-
-[node name="building8" parent="." index="15" instance=ExtResource( 5 )]
-
-position = Vector2( 443.252, 41.4483 )
-
-[node name="Ship 2" parent="." index="16" instance=ExtResource( 7 )]
+[node name="Ship 2" parent="." index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 363.027, 171.239 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
+
+[node name="building5" parent="." index="13" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 107.107, 25.9086 )
+
+[node name="building6" parent="." index="14" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 257.007, 29.6099 )
+
+[node name="building7" parent="." index="15" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 447.621, 33.3111 )
+
+[node name="building8" parent="." index="16" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 608.625, 35.1617 )
 
 [connection signal="destroyed" from="building" to="." method="_on_building_destroyed"]
 
@@ -114,5 +121,13 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="destroyed" from="building3" to="." method="_on_building3_destroyed"]
 
 [connection signal="destroyed" from="building4" to="." method="_on_building4_destroyed"]
+
+[connection signal="destroyed" from="building5" to="." method="_on_building5_destroyed"]
+
+[connection signal="destroyed" from="building6" to="." method="_on_building6_destroyed"]
+
+[connection signal="destroyed" from="building7" to="." method="_on_building7_destroyed"]
+
+[connection signal="destroyed" from="building8" to="." method="_on_building8_destroyed"]
 
 

@@ -20,3 +20,5 @@ func _on_hitbox_body_entered(area):
 	if "asteroid" in area.name:
 		emit_signal("destroyed", self)
 		queue_free()
+
+
