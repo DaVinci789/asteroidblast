@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 4.7466
 
-[node name="lazer" type="RigidBody2D" index="0"]
+[node name="lazer" type="RigidBody2D"]
 
 position = Vector2( -0.463928, 0.115982 )
 input_pickable = false
