@@ -50,7 +50,7 @@ func _process(delta):
 		
 	position += velocity * speed * delta
 	position.x = wrapf(position.x, -screenbuffer, screensize.x + screenbuffer)
-	position.y = clamp(position.y, 0, screensize.y)
+	position.y = clamp(position.y, screensize.y/2, screensize.y)
 	
 	if Input.is_action_just_pressed("ui_select") && $hitdelay.is_stopped():
 		print("firing")
