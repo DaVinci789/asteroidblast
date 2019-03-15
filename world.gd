@@ -27,7 +27,9 @@ func game_over():
 			print("Player 2 wins")
 		if buildings2 == []:
 			print(" Player 1 wins")
-		get_tree().quit()
+		get_tree().change_scene("res://gameover.tscn")
+		queue_free()
+		#get_tree().quit()
 
 func _on_building_destroyed(body):
 	buildings.remove(buildings.find(body))
