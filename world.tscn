@@ -1,74 +1,133 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://asteroid.tscn" type="PackedScene" id=2]
-[ext_resource path="res://planet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://building.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world.gd" type="Script" id=1]
+[ext_resource path="res://ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asteroid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://planet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://building.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ship2.tscn" type="PackedScene" id=7]
 
 [node name="world" type="Node2D" index="0"]
 
-[node name="ship" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
 
-position = Vector2( 176.698, 826.767 )
+[node name="ship" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 330.121, 829.557 )
+rotation = -1.5708
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 lazer_speed = 1000
-lazer_spin = 2000
 
-[node name="asteroid" parent="." index="1" instance=ExtResource( 2 )]
+[node name="asteroid" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 151, 158 )
+position = Vector2( 158.48, 446.332 )
 
-[node name="asteroid2" parent="." index="2" instance=ExtResource( 2 )]
+[node name="asteroid2" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 226, 424 )
+position = Vector2( 333.895, 463.188 )
 
-[node name="asteroid3" parent="." index="3" instance=ExtResource( 2 )]
+[node name="asteroid3" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 555.6, 157.123 )
-scale = Vector2( 2.68373, 2.5598 )
+position = Vector2( 542.807, 473.463 )
 
-[node name="StaticBody2D" parent="." index="4" instance=ExtResource( 3 )]
+[node name="StaticBody2D" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 353.081, -4.20473 )
 scale = Vector2( 11.4569, 1 )
 collision_layer = 2
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
-[node name="StaticBody2D2" parent="." index="5" instance=ExtResource( 3 )]
+[node name="StaticBody2D2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 344.269, 986.413 )
 scale = Vector2( 11.4569, 1 )
 collision_layer = 2
 _sections_unfolded = [ "Collision" ]
 
-[node name="wall" parent="." index="6" instance=ExtResource( 4 )]
+[node name="wall" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 5.0351, 486.74 )
 scale = Vector2( 1, 14.7945 )
 collision_layer = 2
 _sections_unfolded = [ "Collision", "Pickable" ]
 
-[node name="wall2" parent="." index="7" instance=ExtResource( 4 )]
+[node name="wall2" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 700.48, 499.103 )
 scale = Vector2( 1, 14.7945 )
 collision_layer = 2
 _sections_unfolded = [ "Collision" ]
 
-[node name="building" parent="." index="8" instance=ExtResource( 5 )]
+[node name="building" parent="." index="8" groups=[
+"building_player",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 116.403, 944.534 )
 
-[node name="building2" parent="." index="9" instance=ExtResource( 5 )]
+[node name="building2" parent="." index="9" groups=[
+"building_player",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 270.151, 947.549 )
 
-[node name="building3" parent="." index="10" instance=ExtResource( 5 )]
+[node name="building3" parent="." index="10" groups=[
+"building_player",
+] instance=ExtResource( 6 )]
 
 position = Vector2( 411.841, 947.549 )
 
-[node name="building4" parent="." index="11" instance=ExtResource( 5 )]
+[node name="building4" parent="." index="11" groups=[
+"building_player",
+] instance=ExtResource( 6 )]
 
-position = Vector2( 592.722, 949.056 )
+position = Vector2( 591.614, 950.164 )
+_sections_unfolded = [ "Collision", "Material", "Motion", "Pickable", "Visibility" ]
+
+[node name="Ship 2" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 363.027, 171.239 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="building5" parent="." index="13" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 107.107, 25.9086 )
+
+[node name="building6" parent="." index="14" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 257.007, 29.6099 )
+
+[node name="building7" parent="." index="15" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 447.621, 33.3111 )
+
+[node name="building8" parent="." index="16" groups=[
+"buildings_player2",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 608.625, 35.1617 )
+
+[connection signal="destroyed" from="building" to="." method="_on_building_destroyed"]
+
+[connection signal="destroyed" from="building2" to="." method="_on_building2_destroyed"]
+
+[connection signal="destroyed" from="building3" to="." method="_on_building3_destroyed"]
+
+[connection signal="destroyed" from="building4" to="." method="_on_building4_destroyed"]
+
+[connection signal="destroyed" from="building5" to="." method="_on_building5_destroyed"]
+
+[connection signal="destroyed" from="building6" to="." method="_on_building6_destroyed"]
+
+[connection signal="destroyed" from="building7" to="." method="_on_building7_destroyed"]
+
+[connection signal="destroyed" from="building8" to="." method="_on_building8_destroyed"]
 
 

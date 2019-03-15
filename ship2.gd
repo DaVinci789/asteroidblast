@@ -14,9 +14,9 @@ export var lazer_speed = 100
 export var lazer_spin = 2000
 
 #Controls
-export var left = "ui_left"
-export var right = "ui_right"
-export var up = "ui_up"
+export var left = "ui_left2"
+export var right = "ui_right2"
+export var up = "ui_up2"
 
 
 func _ready():
@@ -36,23 +36,26 @@ func shoot():
 
 func _process(delta):
 	screensize = get_viewport_rect().size
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left2"):
 		rotation_degrees -= rot_speed * delta
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right2"):
 		rotation_degrees += rot_speed * delta
 	
 	var movedir = Vector2(1,0).rotated(rotation)
 	
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up2"):
+		print("Move ship 2 forward")
 		velocity = velocity.linear_interpolate(movedir, acc)
 	else:
 		velocity = velocity.linear_interpolate(Vector2(0,0), dec)
 		
 	position += velocity * speed * delta
 	position.x = wrapf(position.x, -screenbuffer, screensize.x + screenbuffer)
-	position.y = clamp(position.y, screensize.y/2, screensize.y)
+	position.y = clamp(position.y, 0, screensize.y/2-70)
 	
-	if Input.is_action_just_pressed("ui_select") && $hitdelay.is_stopped():
+	if Input.is_action_just_pressed("ui_select2") && $hitdelay.is_stopped():
 		print("firing")
 		$hitdelay.start()
 		shoot()
+#		if $lazer.is_colliding():
+#			print($lazer.get_collider())

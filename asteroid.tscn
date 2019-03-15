@@ -7,7 +7,7 @@
 
 custom_solver_bias = 0.0
 radius = 19.794
-height = 0.936436
+height = 0.554832
 
 [node name="asteroid" type="RigidBody2D"]
 

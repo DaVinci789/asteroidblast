@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 36.3025, 36.7899 )
+extents = Vector2( 31.9874, 31.8261 )
 
 [node name="building" type="StaticBody2D"]
 
@@ -35,7 +35,6 @@ shape = SubResource( 1 )
 [node name="hitbox" type="Area2D" parent="." index="2"]
 
 rotation = 1.42109e-014
-scale = Vector2( 1, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

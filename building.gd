@@ -4,6 +4,8 @@ extends StaticBody2D
 # var a = 2
 # var b = "textvar"
 
+signal destroyed
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -16,4 +18,7 @@ func _ready():
 
 func _on_hitbox_body_entered(area):
 	if "asteroid" in area.name:
+		emit_signal("destroyed", self)
 		queue_free()
+
+
