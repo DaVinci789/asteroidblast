@@ -5,7 +5,7 @@ var screensize = get_viewport_rect().size
 export (int) var rot_speed = 190
 
 var speed = 225
-var acc = 0.07
+var acc = 0.09
 var dec = 0.01
 var screenbuffer = 20
 
@@ -52,7 +52,7 @@ func _process(delta):
 	position.x = wrapf(position.x, -screenbuffer, screensize.x + screenbuffer)
 	position.y = clamp(position.y, screensize.y/2, screensize.y)
 	
-	if Input.is_action_just_pressed("ui_select") && $hitdelay.is_stopped():
+	if Input.is_action_just_pressed("ui_select"): #&& $hitdelay.is_stopped():
 		print("firing")
-		$hitdelay.start()
+		#$hitdelay.start()
 		shoot()

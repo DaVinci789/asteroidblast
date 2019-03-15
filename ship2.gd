@@ -53,9 +53,9 @@ func _process(delta):
 	position.x = wrapf(position.x, -screenbuffer, screensize.x + screenbuffer)
 	position.y = clamp(position.y, 0, screensize.y/2-70)
 	
-	if Input.is_action_just_pressed("ui_select2") && $hitdelay.is_stopped():
+	if Input.is_action_just_pressed("ui_select2"):# && $hitdelay.is_stopped():
 		print("firing")
-		$hitdelay.start()
+		#$hitdelay.start()
 		shoot()
 #		if $lazer.is_colliding():
 #			print($lazer.get_collider())

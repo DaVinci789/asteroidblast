@@ -8,7 +8,7 @@
 [ext_resource path="res://building.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ship2.tscn" type="PackedScene" id=7]
 
-[node name="world" type="Node2D" index="0"]
+[node name="world" type="Node2D"]
 
 script = ExtResource( 1 )
 

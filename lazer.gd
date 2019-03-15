@@ -19,3 +19,8 @@ func _ready():
 func _on_lazer_body_exited(body):
 	queue_free()
 	pass # replace with function body
+
+
+func _on_lazer_body_entered(body):
+	queue_free()
+	pass # replace with function body
