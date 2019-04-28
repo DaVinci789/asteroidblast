@@ -8,13 +8,14 @@
 [ext_resource path="res://building.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ship2.tscn" type="PackedScene" id=7]
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="ship" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( 330.121, 829.557 )
+position = Vector2( 350, 829.557 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 lazer_speed = 1000
@@ -33,37 +34,38 @@ position = Vector2( 542.807, 473.463 )
 
 [node name="StaticBody2D" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 353.081, -4.20473 )
+position = Vector2( 353.081, -7.29558 )
 scale = Vector2( 11.4569, 1 )
 collision_layer = 2
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="StaticBody2D2" parent="." index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 344.269, 986.413 )
+position = Vector2( 344.628, 991.432 )
 scale = Vector2( 11.4569, 1 )
 collision_layer = 2
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="wall" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 5.0351, 486.74 )
-scale = Vector2( 1, 14.7945 )
+position = Vector2( 8.12592, 553.908 )
+scale = Vector2( 1, 12.6465 )
 collision_layer = 2
 _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="wall2" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( 700.48, 499.103 )
-scale = Vector2( 1, 14.7945 )
+position = Vector2( 700.48, 551.167 )
+scale = Vector2( 1, 12.5637 )
 collision_layer = 2
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="building" parent="." index="8" groups=[
 "building_player",
 ] instance=ExtResource( 6 )]
 
 position = Vector2( 116.403, 944.534 )
+_sections_unfolded = [ "Collision", "Material", "Motion", "Pause", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="building2" parent="." index="9" groups=[
 "building_player",
@@ -86,9 +88,9 @@ _sections_unfolded = [ "Collision", "Material", "Motion", "Pickable", "Visibilit
 
 [node name="Ship 2" parent="." index="12" instance=ExtResource( 7 )]
 
-position = Vector2( 363.027, 171.239 )
+position = Vector2( 350, 169.879 )
 rotation = 1.5708
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="building5" parent="." index="13" groups=[
 "buildings_player2",

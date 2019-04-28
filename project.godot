@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="astroidblast"
-run/main_scene="res://world.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -9,7 +9,7 @@ size = 50
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -34,6 +34,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
 
@@ -50,7 +51,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Mouse", "Rect", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Visibility" ]
 
 [node name="Label" type="Label" parent="VBoxContainer" index="0"]
 
@@ -73,7 +74,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "custom_constants", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Visibility", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Button" type="Button" parent="VBoxContainer" index="1"]
 
