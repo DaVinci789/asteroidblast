@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://pause.gd" type="Script" id=1]
+[ext_resource path="res://emulogic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://continue_button.gd" type="Script" id=3]
+[ext_resource path="res://exit_button.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
+
+[node name="pause_menu" type="Panel"]
+margin_right = 554.0
+margin_bottom = 311.0
+script = ExtResource( 1 )
+
+[node name="pause_container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="continue" type="Button" parent="pause_container"]
+margin_right = 554.0
+margin_bottom = 147.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+custom_constants/hseparation = 2
+text = "CONTINUE"
+script = ExtResource( 3 )
+
+[node name="exit" type="Button" parent="pause_container"]
+margin_top = 163.0
+margin_right = 554.0
+margin_bottom = 311.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "EXIT"
+script = ExtResource( 4 )
+[connection signal="pressed" from="pause_container/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="pause_container/exit" to="." method="_on_exit_pressed"]

@@ -4,42 +4,21 @@
 [ext_resource path="res://evilship.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 32.5558, 32.5535 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-rot_speed = 190
 lazer_speed = 1000
-lazer_spin = 2000
-left = "ui_left2"
-right = "ui_right2"
-up = "ui_up2"
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.30232, -3.46675 )
 rotation = 1.5708
 scale = Vector2( 0.132631, 0.132631 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.96114, -2.64076 )
 shape = SubResource( 1 )
 
-[node name="hitdelay" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="hitdelay" type="Timer" parent="."]
 one_shot = true
-autostart = false
-
-

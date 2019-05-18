@@ -17,6 +17,11 @@ func _ready():
 	print(buildings2)
 	pass
 
+func _input(ui):
+	if ui.is_action_pressed("ui_cancel"):
+		$pause_menu.show()
+		get_tree().paused = true
+
 func _process(delta):
 
 	pass
